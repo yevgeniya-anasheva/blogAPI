@@ -1,4 +1,4 @@
-const mongoDBConnectionString = "mongodb+srv://jen-anasheva:assignment1@cluster0-odaix.mongodb.net/blog?retryWrites=true&w=majority";
+const mongoDBConnectionString = "";
 const HTTP_PORT = process.env.PORT || 8080;
 
 const express = require("express");
@@ -21,7 +21,7 @@ app.post("/api/posts", (req,res)=>{
     });
 });
 
-// IMPORTANT NOTE: ?tag=#funny wll not function, but ?tag=funny will
+// NOTE: ?tag=#funny will not function, but ?tag=funny will
 app.get("/api/posts", (req,res) => {
     data.getAllPosts(req.query.page, req.query.perPage, req.query.category, req.query.tag).then((data)=>{
         res.json(data);
